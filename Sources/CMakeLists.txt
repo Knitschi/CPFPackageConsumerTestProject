@@ -6,21 +6,13 @@ include("${CMAKE_TOOLCHAIN_FILE}")					# make sure the compiler is set before th
 
 
 ##################################### CREATE PROJECT ########################################
-project(SimpleOneLibCPFTestProject)
+project(PackageConsumeTestProject)
 cpfInit()
 
 ##################################### FIND MyLib package ########################################
-find_package( 
-	MyLib CONFIG
+find_package( MyLib 0.0.2 CONFIG REQUIRED
 	PATHS "${CMAKE_SOURCE_DIR}/../MyLib"
-	#REQUIRED COMPONENTS mylib::MyLib
-	
 )
-
-devMessage("${MyLib_Dir}")
-devMessage("${MyLib_CONSIDERED_VERSIONS}")
-devMessage("${MyLib_CONSIDERED_CONFIGS}")
-
 
 ####################################### ADD Packages #############################################
 

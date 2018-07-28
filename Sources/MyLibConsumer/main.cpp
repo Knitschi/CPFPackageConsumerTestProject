@@ -2,10 +2,11 @@
 #include <MyLib/function.h>
 #include <MyLib/fixture.h>
 
-int main(int argc, char **argv)
+int main(int, char**)
 {
-    MyLib::function();
-    MyFixture fixture;
+    mylib::function();
+    mylib::MyFixture fixture;
+    fixture.setUp();
 
     return 0;
 }
