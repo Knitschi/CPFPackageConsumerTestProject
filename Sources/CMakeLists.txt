@@ -10,7 +10,12 @@ project(PackageConsumeTestProject)
 cpfInit()
 
 ##################################### FIND MyLib package ########################################
-find_package( MyLib 0.0.2 CONFIG REQUIRED
+if(NOT DEFINED MYLIB_VERSION)
+	message(FATAL_ERROR "You need to define the cmake cache variable MYLIB_VERSION.")
+endif()
+
+
+find_package( MyLib ${MYLIB_VERSION} CONFIG REQUIRED
 	PATHS "${CMAKE_SOURCE_DIR}/../MyLib"
 )
 
