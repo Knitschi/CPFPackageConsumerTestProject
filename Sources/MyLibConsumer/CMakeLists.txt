@@ -1,5 +1,5 @@
 
-include(cpfAddPackage)
+include(cpfAddCppPackage)
 
 set( PACKAGE_NAMESPACE myapp )
 cpfInitPackageProject(
@@ -36,7 +36,7 @@ set(PACKAGE_LINKED_TEST_LIBRARIES
 )
 
 ############################################## Add Package #################################
-cpfAddPackage( 
+cpfAddCppPackage( 
 	PACKAGE_NAME								${PACKAGE_NAME}
 	PACKAGE_NAMESPACE							${PACKAGE_NAMESPACE}
 	TYPE										CONSOLE_APP
