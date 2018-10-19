@@ -1,3 +1,4 @@
 
+#include <MyLibConsumer/myapp_export.h>
 
-void a(){}
+MYAPP_EXPORT void a(){}
