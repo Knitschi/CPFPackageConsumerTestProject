@@ -1,11 +1,8 @@
 
 include(cpfAddCppPackage)
 
-set( PACKAGE_NAMESPACE myapp )
-cpfInitPackageProject(
-	PACKAGE_NAME
-	${PACKAGE_NAMESPACE}
-)
+cpfInitPackageProject()
+
 set( briefDescription "A C++ libary used for testing if the library package is consumable." )
 set( longDescription "" )
 
@@ -37,8 +34,7 @@ set(PACKAGE_LINKED_TEST_LIBRARIES
 
 ############################################## Add Package #################################
 cpfAddCppPackage( 
-	PACKAGE_NAME								${PACKAGE_NAME}
-	PACKAGE_NAMESPACE							${PACKAGE_NAMESPACE}
+	PACKAGE_NAMESPACE							myapp
 	TYPE										CONSOLE_APP
 	BRIEF_DESCRIPTION							${briefDescription}
 	LONG_DESCRIPTION							${longDescription}
