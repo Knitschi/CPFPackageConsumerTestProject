@@ -1,13 +1,9 @@
-# Root CMakeLists file for the "CMakeProjectFramework"
-cmake_minimum_required (VERSION 3.8.0) 
+# Root CMakeLists file for the CPFPackageConsumerTestProject
 
-include("CPFCMake/Functions/cpfInit.cmake")
-include("${CMAKE_TOOLCHAIN_FILE}")					# make sure the compiler is set before the project call
+include("CPFCMake/cpfInit.cmake")
+cmake_minimum_required (VERSION ${CPF_MINIMUM_CMAKE_VERSION}) 
 
-
-##################################### CREATE PROJECT ########################################
-project(PackageConsumeTestProject)
-cpfInit()
+project(CPFPackageConsumerTestProject)
 
 ##################################### FIND MyLib package ########################################
 if(NOT DEFINED MYLIB_VERSION)
@@ -22,15 +18,4 @@ find_package( MyLib ${MYLIB_VERSION} CONFIG REQUIRED
 	PATHS "${MYLIB_LOCATION}"
 )
 
-####################################### ADD Packages #############################################
-
-set( externalPackages
-	cotire
-	CPFCMake
-	CPFBuildscripts
-)
-
-set( globalFiles
-)
-
-cpfAddPackages( "${externalPackages}" "${globalFiles}")
+cpfAddPackages()
